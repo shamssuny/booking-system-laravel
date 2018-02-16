@@ -19,6 +19,14 @@
         <div class="bookings col-md-5" style="">
             <h3>Booked Dates: </h3>
             <hr>
+            @forelse($getBookedCenters as $booked)
+                <div class="col-md-12">
+                    {{ $booked->date }}
+                </div>
+            @empty
+                No Upcoming Bookings
+            @endforelse
+
         </div>
 
     </div>
@@ -26,7 +34,19 @@
 
     <div class="booking-buttons-forms col-md-12">
 
-        
+        <form action="{{ url('user/book/'.$getTheCenter->client_id) }}" method="post">
+            {{ csrf_field() }}
+            <label for="">Select Date:</label>
+            <input type="text" id="datepicker" name="date" placeholder="Booking Date"><br>
+            <textarea name="book_detail" id="" placeholder="Detailed Description about your booking"></textarea>
+            <input type="submit" name="book" value="Make Booking">
+        </form>
 
     </div>
+
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+    </script>
 @endsection

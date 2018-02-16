@@ -23,7 +23,7 @@ class RegisterController extends Controller
     //register a user
     public function store(){
         $this->validate(request(),[
-            'username' => 'required',
+            'username' => 'required|alpha_dash',
             'password' => 'required',
             'email' => 'required',
             'phone' => 'required',

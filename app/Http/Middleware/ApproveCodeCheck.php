@@ -22,7 +22,7 @@ class ApproveCodeCheck
         //check if the user is active or not
         $getUserActive = User::where('active','no')->where('id',Auth::id())->get();
         if(count($getUserActive) == 1){
-            return redirect('/user/active');
+            return redirect('user/active');
         }
 
 

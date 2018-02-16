@@ -19,7 +19,7 @@ class UserHomeController extends Controller
         //$city = array('dhaka','chittagong','khulna','barishal','mymensing');
 
         //get all the centers data
-        $allCenters = Center::Where('active','yes')->get();
+        $allCenters = Center::Where('active','yes')->paginate(10);
         return view('user/home',compact('allCenters'));
     }
 
@@ -74,6 +74,7 @@ class UserHomeController extends Controller
     //logout the user
     public function logout(){
         Auth::logout();
+
         return redirect('/login');
     }
 

@@ -17,7 +17,11 @@ class ClientHomeController extends Controller
         //account status
         $getClient = Client::where('id',Auth::guard('client')->id())->first();
         $accountStatus = $getClient->active;
-        return view('client/home',compact('accountStatus'));
+
+        //get other centers
+        $getOtherCenters = Center::paginate(10);
+
+        return view('client/home',compact('accountStatus','getOtherCenters'));
     }
 
     //show client center page
@@ -65,6 +69,41 @@ class ClientHomeController extends Controller
         }
 
         return redirect('/client/center')->with('updateSuccess','Profile Updated Successfully!');
+    }
+
+
+    //show update client page
+    public function showUpdate(){
+        $getClientData = Client::find(Auth::guard('client')->id());
+        return view('client.update',compact('getClientData'));
+    }
+
+    //update data of client
+    public function update(){
+        $this->validate(request(),[
+            'email' => 'email|required',
+            'password' => 'confirmed|min:4'
+        ]);
+
+        //init
+        $update = Client::find(Auth::guard('client')->id());
+        if(!empty(request('password'))){
+            $update->email = request('email');
+            $update->password = bcrypt(request('password'));
+            $update->save();
+        }else{
+            $update->email = request('email');
+            $update->save();
+        }
+
+        return redirect()->back()->with('updateSuccess','Update Successfully');
+    }
+
+
+    //Show a center to client
+    public function showCenter($id){
+        $getTheCenter = Center::find($id);
+        return view('client.otherCenter',compact('getTheCenter'));
     }
 
     //log out the clienr

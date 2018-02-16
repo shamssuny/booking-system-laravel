@@ -12,7 +12,7 @@
     <div class="head-left col-md-6">
         আয়োজন
         <span><a href="">Profile</a></span>
-        <span><a href="">Bookings</a></span>
+        <span><a href="{{ url('/user/bookings') }}">Bookings</a></span>
     </div>
 
 
@@ -67,7 +67,7 @@
                     <p>{{ $alls->city }} || {{ $alls->sub_city }}</p>
                 </div>
                 <div class="col-md-4">
-                    <a class="btn btn-primary" href="user/{{ $alls->id }}">View Details</a>
+                    <a class="btn btn-primary" href="user/center/{{ $alls->id }}">View Details</a>
                 </div>
             </div>
         @empty
@@ -85,11 +85,15 @@
                     <p>{{ $all->city }} || {{ $all->sub_city }}</p>
                 </div>
                 <div class="col-md-4">
-                    <a class="btn btn-primary" href="user/{{ $all->id }}">View Details</a>
+                    <a class="btn btn-primary" href="user/center/{{ $all->id }}">View Details</a>
                 </div>
             </div>
         @empty
         @endforelse
+        <div class="col-md-12">
+            {{ $allCenters->links() }}
+        </div>
+
     @endif
 </div>
 

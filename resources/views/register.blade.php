@@ -1,6 +1,10 @@
 @if(session('usererror'))
     {{ session('usererror') }}
 @endif
+
+@foreach($errors->all() as $error)
+    {{ $error }}<br>
+@endforeach
 <form action="/register" method="POST">
     {{ csrf_field() }}
     <input type="text" name="username" placeholder="username"><br>
