@@ -11,7 +11,7 @@
 
     <div class="head-left col-md-6">
         আয়োজন
-        <span><a href="">Profile</a></span>
+        <span><a href="{{ url('/user/profile') }}">Profile</a></span>
         <span><a href="{{ url('/user/bookings') }}">Bookings</a></span>
     </div>
 

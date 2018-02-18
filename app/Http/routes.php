@@ -31,6 +31,8 @@ Route::get('/user/center/{id}','UserShowController@searchView')->where('id','[0-
 Route::post('/user/book/{client_id}','BookingController@makeBook')->middleware(['auth','approve']);
 Route::get('/user/bookings','BookingController@view')->middleware(['auth','approve']);
 Route::post('/user/bookings','BookingController@payment')->middleware(['auth','approve']);
+Route::get('user/profile','UserHomeController@showProfile')->middleware(['auth','approve']);
+Route::post('user/profile','UserHomeController@updateProfile')->middleware(['auth','approve']);
 Route::get('user/active','UserHomeController@showActivePage')->middleware('auth');
 Route::post('user/active','UserHomeController@activeCode')->middleware('auth');
 Route::get('user/active/resend','UserHomeController@resendCode')->middleware('auth');

@@ -71,6 +71,32 @@ class UserHomeController extends Controller
         return 'resend code procedure goes here';
     }
 
+    //show users profile
+    public function showProfile(){
+        $user = User::find(Auth::id());
+        return view('user.profile',compact('user'));
+    }
+
+    //update user data
+    public function updateProfile(){
+        $this->validate(request(),[
+           'email' => 'required|email',
+            'password' => 'min:4|confirmed'
+        ]);
+
+        $updateUser = User::find(Auth::id());
+        if(!empty(request('password'))){
+            $updateUser->email = request('email');
+            $updateUser->password = bcrypt(request('password'));
+            $updateUser->save();
+        }else{
+            $updateUser->email = request('email');
+            $updateUser->save();
+        }
+
+        return redirect()->back()->with('updateSuccess','Update Successfully');
+    }
+
     //logout the user
     public function logout(){
         Auth::logout();
