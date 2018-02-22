@@ -31,7 +31,7 @@
 <div class="search-area col-md-12">
 
     <div class="search-box col-md-12 text-center">
-        <form action="" method="POST">
+        <form action="{{ URL::current() }}" method="POST">
             {{ csrf_field() }}
             <select name="city" id="c">
                 <option value="">-----</option>

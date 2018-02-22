@@ -24,6 +24,24 @@ class ClientHomeController extends Controller
         return view('client/home',compact('accountStatus','getOtherCenters'));
     }
 
+
+    //search the centers
+    public function search(){
+
+        $getClient = Client::where('id',Auth::guard('client')->id())->first();
+        $accountStatus = $getClient->active;
+
+        $city = request('city');
+        $sub_city = request('sub_city');
+        $center = request('search_text');
+        //search according to the value
+        $allSearchCenters = Center::where('city','like','%'.$city.'%')
+            ->orWhere('sub_city','like','%'.$sub_city.'%')
+            ->paginate(10);
+        return view('client.home',compact('allSearchCenters','accountStatus'));
+    }
+
+
     //show client center page
     public function centerShow(){
         //get center information
@@ -62,8 +80,8 @@ class ClientHomeController extends Controller
 
         //fucking with file -_-
         if($request->hasFile('picture')){
-            if(File::exists(Auth::guard('client')->id().'.jpg')){
-                File::delete(Auth::guard('client')->id().'.jpg');
+            if(File::exists(public_path('uploads/'.Auth::guard('client')->id().'.jpg'))){
+                File::delete(public_path('uploads/'.Auth::guard('client')->id().'.jpg'));
             }
             $request->picture->move('uploads',Auth::guard('client')->id().'.jpg');
         }
