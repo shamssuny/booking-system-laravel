@@ -1,5 +1,18 @@
 @extends('master.template')
 
+@section('title','Homepage | User | Ayojon')
+
+@section('leftNavContent')
+    <a class="navbar-brand" href="{{ url('/user/profile') }}">Profile</a>
+    <a class="navbar-brand" href="{{ url('/user/bookings') }}">Bookings</a>
+@endsection
+
+
+@section('rightNavContent')
+
+@endsection
+
+
 @section('content')
 
 @if(session('activeSuccess'))
@@ -10,9 +23,7 @@
 
 
     <div class="head-left col-md-6">
-        আয়োজন
-        <span><a href="{{ url('/user/profile') }}">Profile</a></span>
-        <span><a href="{{ url('/user/bookings') }}">Bookings</a></span>
+
     </div>
 
 

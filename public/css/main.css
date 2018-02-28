@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+
+body{
+    font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f8f8f8;
+}
+.navbar-default{
+	padding:1%;
+	padding-bottom: 0;
+	background-color: #222222;
+	margin-bottom: 0;
+}
+.uppercase{
+	text-transform: uppercase;
+}
+.navbar-default .navbar-brand{
+	color: #00a79d;;
+}
+.blue{
+	color: #00a79d;
+}
+.red{
+	color: #ae2d1a
+}
+.black{
+    color: black
+}
+.width50{
+	width: 50%;
+}
+.navbar-header{
+	
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+	color: #00a79d;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+	background-color: transparent;
+}
+.bold{
+	font-weight: bold;
+}
+.zero{
+	padding:0;
+}
+.padding-t-1{
+	padding-top: 1%;
+}
+.box{
+	background-color: white;
+	border-radius: 10px;
+	margin-bottom: 5%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.off-white{
+	color: #a9a7ab;
+}
+.back-blue{
+	background-color: #00a79d;
+}
+.white{
+	color: white;
+}
+.center {
+	text-align: center;
+}
+.padding-l-1{
+	padding-left: 1%;
+}
+.inline{
+	/*display: inline;*/
+}
+
+/*footer css*/
+
+
+
+.search-text{
+	border-bottom:1px dashed #00a79d;
+	padding-top:2%;
+	padding-bottom:2%;
+}
+	
+.search-text .input-search{
+	height:45px;
+	width:50%;
+	padding-left:20px;
+    color:#333;
+} 
+
+.search-text .btn-search{
+	background-color: #00a79d;
+	border:1px solid #FFF;
+	color:#FFF;
+	padding: 11px 22px;
+}
+
+.search-text  .btn-search:hover{
+	background-color:#FFF;
+	color: #00a79d;
+	transition: all 2s;
+}
+
+.copyright{
+    background-color:black;
+}
+
+.copyright p{
+	color: #00a79d;
+   margin:15px 0px;
+}
+
+footer{
+	background-color:#222222;
+
+	padding: 1% 0px;
+}
+
+footer .menu li a{
+	color:#b1aca1;
+	padding:10px;
+	text-decoration:none;
+}
+
+footer .menu li a:hover{
+	color: #00a79d;
+}
+
+.fa.fa-facebook , .fa.fa-dropbox, .fa.fa-flickr , .fa.fa-github , .fa.fa-linkedin ,.fa,fa-tumblr ,.fa.fa-google-plus , .fa.fa-tumblr {
+	color:#b1aca1;
+	font-size:20px;
+	padding:10px;
+}
+
+.fa.fa-facebook:hover , .fa.fa-dropbox:hover , .fa.fa-flickr:hover  , .fa.fa-github:hover  , .fa.fa-linkedin:hover  ,.fa,fa-tumblr:hover  ,.fa.fa-google-plus:hover  , .fa.fa-tumblr:hover  {
+	color: #00a79d;
+}
+
+
+
+/*footer css*/

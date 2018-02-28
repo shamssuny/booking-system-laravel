@@ -7,7 +7,7 @@
 @endforeach
 <form action="/register" method="POST">
     {{ csrf_field() }}
-    <input type="text" name="username" placeholder="username"><br>
+    <input type="text" name="username" placeholder="username" value=""><br>
     <input type="password" name="password" placeholder="password"><br>
     <input type="email" name="email" placeholder="email"><br>
     <input type="number" name="phone" placeholder="phone"><br>

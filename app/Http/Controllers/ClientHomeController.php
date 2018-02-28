@@ -19,7 +19,7 @@ class ClientHomeController extends Controller
         $accountStatus = $getClient->active;
 
         //get other centers
-        $getOtherCenters = Center::paginate(10);
+        $getOtherCenters = Center::where('active','yes')->paginate(10);
 
         return view('client/home',compact('accountStatus','getOtherCenters'));
     }

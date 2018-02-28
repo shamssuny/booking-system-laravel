@@ -18,8 +18,10 @@ Route::get('/', function () {
 //defaults routes
 Route::get('/login','LoginController@index');
 Route::post('/login','LoginController@login');
-Route::get('/register', 'RegisterController@view');
+//Route::get('/register', 'RegisterController@view');
 Route::post('/register', 'RegisterController@store');
+Route::get('/resetPassword','LoginController@showReset');
+Route::post('/resetPassword','LoginController@resetPassword');
 
 
 //all users routes
