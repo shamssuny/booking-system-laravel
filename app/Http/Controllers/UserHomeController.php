@@ -31,9 +31,12 @@ class UserHomeController extends Controller
         $sub_city = request('sub_city');
         $center = request('search_text');
         //search according to the value
-        $allSearchCenters = Center::where('city','like','%'.$city.'%')
-                                    ->orWhere('sub_city','like','%'.$sub_city.'%')
-                                    ->get();
+        $allSearchCenters = Center::where(function ($query) use ($city,$sub_city){
+            $query->where('city','like','%'.$city.'%');
+            $query->orWhere('sub_city','like','%'.$sub_city.'%');
+        })
+            ->where('active','yes')
+            ->paginate(10);
         return view('user/home',compact('allSearchCenters'));
 
     }

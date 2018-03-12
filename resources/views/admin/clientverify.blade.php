@@ -1,4 +1,6 @@
 @extends('master.template')
+
+@section('content')
 <h2>Client Verification</h2>
 
 <ul class="nav nav-tabs">
@@ -63,3 +65,4 @@
 
     </div>
 </div>
+    @endsection

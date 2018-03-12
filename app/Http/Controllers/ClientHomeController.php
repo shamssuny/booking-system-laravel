@@ -35,8 +35,11 @@ class ClientHomeController extends Controller
         $sub_city = request('sub_city');
         $center = request('search_text');
         //search according to the value
-        $allSearchCenters = Center::where('city','like','%'.$city.'%')
-            ->orWhere('sub_city','like','%'.$sub_city.'%')
+        $allSearchCenters = Center::where(function ($query) use ($city,$sub_city){
+            $query->where('city','like','%'.$city.'%');
+            $query->orWhere('sub_city','like','%'.$sub_city.'%');
+        })
+            ->where('active','yes')
             ->paginate(10);
         return view('client.home',compact('allSearchCenters','accountStatus'));
     }
@@ -59,8 +62,8 @@ class ClientHomeController extends Controller
             'center_details' => 'required',
             'picture' => 'image|mimes:jpg,jpeg',
             'facility_details' => 'required',
-            'city' => '',
-            'sub_city' => '',
+            'city' => 'required',
+            'sub_city' => 'required',
             'full_address' => 'required|min:10'
         ]);
 

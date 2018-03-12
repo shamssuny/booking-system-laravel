@@ -1,0 +1,63 @@
+.center-image{
+
+}
+.center-image img{
+	width: 100%;
+}
+.details .address {
+    display: inline-block;
+    width: 100%;
+    color: #858585;
+    padding: 0 65px 12px 0;
+}
+.rating{
+   float: right;
+}
+.pad-3px{
+	padding: 3px;
+}
+.red{
+	color: #ae2d1a;
+}
+.price {
+    border-top: 1px solid #ccc;
+    padding: 13px 0;
+    line-height: 16px;
+}
+.price em, aside article .price em {
+    float: right;
+    font-size: 16px;
+}
+.price em {
+    font-weight: 700;
+    font-style: normal;
+}
+.description {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 12px 0;
+    
+    min-height: 105px;
+}
+.description a {
+    font-weight: 600;
+    font-style: italic;
+    color: #41AFAA;
+}
+.action{
+	text-align: center;
+	padding: 2%;
+	padding-top: 5%;
+}
+.av-center{
+	padding: 3%;
+}
+.pad-bt-2{
+	padding-bottom: 2%;
+}
+.sec{
+    padding-bottom: 6px;
+}
+.full-width{
+	width: 100%;
+}

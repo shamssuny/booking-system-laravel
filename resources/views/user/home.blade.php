@@ -1,114 +1,144 @@
 @extends('master.template')
 
-@section('title','Homepage | User | Ayojon')
-
-@section('leftNavContent')
-    <a class="navbar-brand" href="{{ url('/user/profile') }}">Profile</a>
-    <a class="navbar-brand" href="{{ url('/user/bookings') }}">Bookings</a>
-@endsection
-
+@section('title','Home | User | Ayojon')
+@push('css')
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/userhomepage.css') }}">
+@endpush
 
 @section('rightNavContent')
-
+    <li><a  href="{{ url('/user/profile') }}">Profile</a></li>
+    <li><a  href="{{ url('/user/bookings') }}">Bookings</a></li>
 @endsection
 
-
-@section('content')
-
-@if(session('activeSuccess'))
-    {{ session('activeSuccess') }}
-@endif
-<h2>User Homepage</h2>
-<div class="user-head col-md-12">
-
-
-    <div class="head-left col-md-6">
-
-    </div>
-
-
-    <div class="head-right col-md-6">
-        Welcome {{ Auth::id() }}
-    </div>
-
-
-</div>
 
 @php
     $city = array('dhaka','chittagong','khulna','barishal','mymensing');
 @endphp
 
-{{--main area start--}}
-<div class="search-area col-md-12">
 
-    <div class="search-box col-md-12 text-center">
-        <form action="{{ URL::current() }}" method="POST">
-            {{ csrf_field() }}
-            <select name="city" id="c">
-                <option value="">-----</option>
-                @forelse($city as $cities)
-                    <option value="{{ $cities }}">{{ $cities }}</option>
-                @empty
+@section('content')
+<!-- body content  start -->
+<main>
+<!-- dropdown -->
+<div class="container">
+        <div class="col-xs-8 col-md-8 col-md-offset-2 col-lg-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 " style="padding-top: 5%;">
+            @if(session('activeSuccess'))
+                <p class="alert alert-success">{{ session('activeSuccess') }}</p>
+            @endif
+            <div class="row ">
+                <form action="{{ URL::current() }}" method="POST">
+                    {{ csrf_field() }}
+    <div class="col-md-4 col-sm-4 col-xs-12 sec" >
+        <select class="form-control" name="city" id="c">
+            <option value="">City</option>
+            @forelse($city as $cities)
+                <option value="{{ $cities }}">{{ $cities }}</option>
+            @empty
 
-                @endforelse
-            </select>
-
-            <select name="sub_city" id="sc">
-                <option value="">-----</option>
-            </select>
-
-            <input type="submit" name="submit" value="submit">
-        </form>
+            @endforelse
+        </select>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 sec">
+        <select class="form-control" name="sub_city" id="sc">
+            <option value="">Sub City</option>
+        </select>
     </div>
 
+           
+    <div class="col-md-3 col-sm-3 col-xs-12"><input type="submit" name="submit" class="btn btn-primary full-width" value="Search"></div>
+                </form>
+  </div>
+        </div>
+        
 </div>
+<!-- dropdown end -->
+
+  <div class="container">
+    <div class="row">
+      <h3 class="text-center pad-bt-2">Available Centers</h3>
 
 
-
-{{--search result area--}}
-<div class="center-list-main col-md-12">
     @if(isset($allSearchCenters))
         @forelse($allSearchCenters as $alls)
-            <div class="center-detail col-md-8 col-md-offset-2" style="border:2px dotted coral;box-shadow: 2px 5px 2px 2px;">
-                <div class="col-md-4">
-                    <p>{{ $alls->center_name }}</p>
-                    <span>Price Range: {{ $alls->price_range }}</span>
+
+            <!-- center start -->
+                <div class="check col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                    <div class=" av-center box">
+                        <div class="center-image">
+                            <img height="200px" src="{{ asset('uploads/'.$alls->picture) }}" alt="Madeira levadas">
+                        </div>
+                        <div class="center-details">
+                            <h3>{{ $alls->center_name }}</h3>
+                            <span class="address">Location : </span>
+                            <span class="rating"><i>{{ $alls->city }} , {{ $alls->sub_city }}</i></span>
+                            <div style="border-bottom: 1px solid grey;" class="price">
+                                Price Range :  <em> <span class="curr"></span>
+                                    <span class="amount">{{ $alls->price_range }}</span></em>
+                            </div>
+
+                            <div class="action">
+                                <a href="user/center/{{ $alls->id }}" class="btn btn-danger">
+                                    See Details</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <p>{{ $alls->city }} || {{ $alls->sub_city }}</p>
-                </div>
-                <div class="col-md-4">
-                    <a class="btn btn-primary" href="user/center/{{ $alls->id }}">View Details</a>
-                </div>
+                <!-- center end -->
+
+
+            @empty
+
+            @endforelse
+            <div class="col-md-12 text-center">
+                {{ $allSearchCenters->links() }}
             </div>
-        @empty
 
-        @endforelse
 
-    @else
-        @forelse($allCenters as $all)
-            <div class="center-detail col-md-8 col-md-offset-2" style="border:2px dotted coral;box-shadow: 2px 5px 2px 2px;">
-                <div class="col-md-4">
-                    <p>{{ $all->center_name }}</p>
-                    <span>Price Range: {{ $all->price_range }}</span>
-                </div>
-                <div class="col-md-4">
-                    <p>{{ $all->city }} || {{ $all->sub_city }}</p>
-                </div>
-                <div class="col-md-4">
-                    <a class="btn btn-primary" href="user/center/{{ $all->id }}">View Details</a>
-                </div>
+        @else
+            @forelse($allCenters as $all)
+
+
+                <!-- center start -->
+                    <div class="check col-md-3 col-lg-3 col-sm-6 col-xs-12">
+                        <div class=" av-center box">
+                            <div class="center-image">
+                                <img height="200px" src="{{ asset('uploads/'.$all->picture) }}" alt="Madeira levadas">
+                            </div>
+                            <div class="center-details">
+                                <h3>{{ $all->center_name }}</h3>
+                                <span class="address">Location : </span>
+                                <span class="rating"><i>{{ $all->city }} , {{ $all->sub_city }}</i></span>
+                                <div style="border-bottom: 1px solid grey;" class="price">
+                                    Price Range :  <em> <span class="curr"></span>
+                                        <span class="amount">{{ $all->price_range }}</span></em>
+                                </div>
+
+                                <div class="action">
+                                    <a href="user/center/{{ $all->id }}" class="btn btn-danger">
+                                        See Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- center end -->
+
+
+            @empty
+            @endforelse
+            <div class="col-md-12 text-center">
+                {{ $allCenters->links() }}
             </div>
-        @empty
-        @endforelse
-        <div class="col-md-12">
-            {{ $allCenters->links() }}
-        </div>
 
-    @endif
+        @endif
+
+
+  </div>
 </div>
 
 
+</main>
+
+<!-- body end -->
 
 
 <script type="text/javascript">
@@ -130,4 +160,5 @@
         }
     });
 </script>
+
 @endsection

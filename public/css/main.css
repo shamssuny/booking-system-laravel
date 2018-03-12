@@ -24,6 +24,11 @@ body{
 .red{
 	color: #ae2d1a
 }
+
+.redbg{
+	background-color: #ae2d1a;
+}
+
 .black{
     color: black
 }

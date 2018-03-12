@@ -27,7 +27,7 @@ class BookingController extends Controller
         $book->date = request('date');
         $book->status = "pending";
         $book->save();
-        return redirect('user/bookings');
+        return redirect('user/bookings')->with('bookSuccess','Record Save Successfully!');
     }
 
     //payment of the user
@@ -55,8 +55,8 @@ class BookingController extends Controller
 
     //view all the booking status
     public function view(){
-        $getAllBooking = Booking::where('user_id',Auth::id())->where('status','!=','complete')->get();
-        $getCompleteBooking = Booking::where('user_id',Auth::id())->where('status','complete')->get();
+        $getAllBooking = Booking::where('user_id',Auth::id())->where('status','!=','complete')->orderBy('id','desc')->paginate(10);
+        $getCompleteBooking = Booking::where('user_id',Auth::id())->where('status','complete')->orderBy('id','desc')->paginate(10);
         return view('user.bookings',compact('getAllBooking','getCompleteBooking'));
     }
 }

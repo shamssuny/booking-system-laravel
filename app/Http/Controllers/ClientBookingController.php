@@ -12,8 +12,8 @@ class ClientBookingController extends Controller
 {
     public function show(){
         //get booked dates
-        $getBookedDates = Booking::where('client_id',Auth::guard('client')->id())->where('status','booked')->get();
-        $getCompleteDates = Booking::where('client_id',Auth::guard('client')->id())->where('status','complete')->get();
+        $getBookedDates = Booking::where('client_id',Auth::guard('client')->id())->where('status','booked')->paginate(10);
+        $getCompleteDates = Booking::where('client_id',Auth::guard('client')->id())->where('status','complete')->paginate(10);
         return view('client.bookings',compact('getBookedDates','getCompleteDates'));
     }
 

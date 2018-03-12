@@ -1,0 +1,49 @@
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+.sign-with {
+    margin-top: 25px;
+    padding: 20px;
+}
+
+.modal-header{
+    background-color: #00897b;
+    color: white;
+    padding: 3% 0;
+
+}
+.btn-green-custom{
+    background-color: #00897b;
+    color: white;
+    border-color: #00897b;
+    padding:1% 5%;
+}
+.btn-green-custom:hover{
+    color: white;
+    border-color: #00897b;
+}
+.modal-body{
+
+    padding:3% ;
+}
+.tab-content{
+    padding:0px 15px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    color: #ae2d1a;
+}
+.table .thead-dark th {
+    color: #fff;
+    background-color: #212529;
+    border-color: #32383e;
+}
+.done{
+    font-weight: bold;
+    color: #00897b;
+}
+.pending{
+    font-weight: bold;
+    color: #ee6e73;
+}
+
