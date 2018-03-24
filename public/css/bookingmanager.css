@@ -1,0 +1,83 @@
+
+.nav-tabs {
+    margin-bottom: 15px;
+}
+.sign-with {
+    margin-top: 25px;
+    padding: 20px;
+}
+
+.modal-header{
+    background-color: #ae2d1a;
+    color: white;
+    padding: 3% 1%;
+
+}
+.btn-danger-custom{
+    background-color: #ae2d1a;
+    color: white;
+    border-color: #ae2d1a;
+    padding:1% 5%;
+}
+.btn-danger-custom:hover{
+    color: white;
+    border-color: #ae2d1a;
+}
+.modal-body{
+
+    padding:0% 0%;
+}
+.tab-content{
+    padding:10px 15px;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    color: #ae2d1a;
+}
+.btn-light{
+    background-color: transparent;
+    border:1px solid white;
+    border-radius: 0px;
+
+
+}
+.btn-light:hover{
+    background-color: white;
+    border:1px solid white;
+    border-radius: 0px;
+    color: black;
+    
+    transition: all 3s;
+
+}
+
+.jumbotron {
+background-color: #ee6e73;
+color: #FFF;
+
+
+}
+.container .jumbotron, .container-fluid .jumbotron{
+    border-radius: 0;
+}
+.jumbotron-sm { 
+padding: 0;
+}
+.jumbotron small {
+color: #FFF;
+}
+.h1 small {
+font-size: 24px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    width: 25%;
+}
+.form-control{
+    width: auto;
+
+}
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    border-top: 1px solid #cc060669;
+}

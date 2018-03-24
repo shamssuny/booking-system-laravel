@@ -34,7 +34,7 @@
                         <!-- Tab panes -->
                         <div class="tab-content" style="padding-right: 30px;">
                             @if(session('usererror'))
-                                {{ session('usererror') }}
+                                <p class="alert alert-danger text-center">{{ session('usererror') }}</p>
                             @endif
                             @include('errors.error')
                             <div class="tab-pane fade in active" id="Login">
@@ -52,7 +52,7 @@
 	                                    <label for="email" class="col-sm-2 control-label">
 	                                        Username</label>
 	                                    <div class="col-sm-10">
-	                                        <input type="text" class="form-control"  placeholder="Username" name="username" />
+	                                        <input type="text" class="form-control"  placeholder="Username" name="username" value="{{ old('username') }}" />
 	                                    </div>
 	                                </div>
 	                                <div class="form-group">
@@ -72,7 +72,7 @@
 	                                <div class="row">
 	                                    
 	                                    <div class="col-sm-12 text-center">
-	                                        <input type="submit" class="btn btn-danger-custom " name="submit">
+	                                        <input type="submit" class="btn btn-danger-custom " name="submit" value="Log In">
 	                                        <a href="{{ url('/resetPassword') }}" style="padding-left: 4%;color: #ae2d1a;">Forgot your password?</a>
 	                                    </div>
 	                                </div>
@@ -119,7 +119,7 @@
                                 <div class="row">
                                     
                                     <div class="col-sm-12 text-center">
-                                        <input type="submit" class="btn btn-danger-custom ">
+                                        <input value="Register" type="submit" class="btn btn-danger-custom ">
                                         
                                     </div>
                                 </div>

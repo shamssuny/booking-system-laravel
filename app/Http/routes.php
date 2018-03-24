@@ -26,7 +26,7 @@ Route::post('/resetPassword','LoginController@resetPassword');
 
 //all users routes
 Route::get('/user','UserHomeController@index')->middleware(['auth','approve']);
-Route::post('/user','UserHomeController@search')->middleware(['auth','approve']);
+Route::get('/user/search','UserHomeController@search')->middleware(['auth','approve']);
 //show center for user
 Route::get('/user/center/{id}','UserShowController@searchView')->where('id','[0-9]+')->middleware(['auth','approve']);
 //make a booking
@@ -43,7 +43,7 @@ Route::get('user/logout','UserHomeController@logout');
 
 //all clients routes
 Route::get('client','ClientHomeController@index')->middleware('auth:client');
-Route::post('client','ClientHomeController@search');
+Route::get('client/search','ClientHomeController@search')->middleware('auth:client');
 Route::get('client/center','ClientHomeController@centerShow')->middleware('auth:client');
 Route::post('client/center','ClientHomeController@updateCenter')->middleware('auth:client');
 Route::get('client/bookings','ClientBookingController@show')->middleware('auth:client');
@@ -63,17 +63,18 @@ Route::post('support','SupportController@store');
 Route::get('auth/login','AdminController@showLogin');
 Route::post('auth/login','AdminController@login');
 Route::get('auth/admin/client-verify','AdminController@showClientVerify')->middleware('adminAuth');
+Route::get('auth/admin/client-verify/{id}/show','AdminController@showClientCenter')->middleware('adminAuth');
 Route::get('auth/admin/client-verify/active/{id}','AdminController@activeClient')->middleware('adminAuth');
 Route::get('auth/admin/client-verify/inactive/{id}','AdminController@inactiveClient')->middleware('adminAuth');
 Route::get('auth/admin/client-manager','AdminController@showClientManager')->middleware('adminAuth');
-Route::post('auth/admin/client-manager','AdminController@showSearchClients')->middleware('adminAuth');
+Route::get('auth/admin/client-manager/search','AdminController@showSearchClients')->middleware('adminAuth');
 Route::get('auth/admin/client-manager/delete/{id}','AdminController@deleteClient')->middleware('adminAuth');
 
 Route::get('auth/admin/booking','AdminController@showBooking')->middleware('adminAuth');
 Route::post('auth/admin/booking/{id}','AdminController@bookStatus')->middleware('adminAuth');
 
 Route::get('auth/admin/user-manager','AdminController@showUserManager')->middleware('adminAuth');
-Route::post('auth/admin/user-manager','AdminController@showSearchUser')->middleware('adminAuth');
+Route::get('auth/admin/user-manager/search','AdminController@showSearchUser')->middleware('adminAuth');
 Route::get('auth/admin/user-manager/delete/{id}','AdminController@deleteUser')->middleware('adminAuth');
 
 Route::get('auth/admin/support','AdminController@showSupport')->middleware('adminAuth');

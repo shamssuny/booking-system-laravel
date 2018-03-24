@@ -12,8 +12,8 @@ class ClientBookingController extends Controller
 {
     public function show(){
         //get booked dates
-        $getBookedDates = Booking::where('client_id',Auth::guard('client')->id())->where('status','booked')->paginate(10);
-        $getCompleteDates = Booking::where('client_id',Auth::guard('client')->id())->where('status','complete')->paginate(10);
+        $getBookedDates = Booking::where('client_id',Auth::guard('client')->id())->where('status','booked')->paginate(10,['*'],'booked_pg');
+        $getCompleteDates = Booking::where('client_id',Auth::guard('client')->id())->where('status','complete')->paginate(10,['*'],'complete_pg');
         return view('client.bookings',compact('getBookedDates','getCompleteDates'));
     }
 
@@ -33,7 +33,7 @@ class ClientBookingController extends Controller
         $clientBook->status = "booked";
         $clientBook->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('bookSuccess','Booking Added Successful!');
     }
 
 }

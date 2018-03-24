@@ -55,8 +55,8 @@ class BookingController extends Controller
 
     //view all the booking status
     public function view(){
-        $getAllBooking = Booking::where('user_id',Auth::id())->where('status','!=','complete')->orderBy('id','desc')->paginate(10);
-        $getCompleteBooking = Booking::where('user_id',Auth::id())->where('status','complete')->orderBy('id','desc')->paginate(10);
+        $getAllBooking = Booking::where('user_id',Auth::id())->where('status','!=','complete')->orderBy('id','desc')->paginate(10,['*'],'book_pg');
+        $getCompleteBooking = Booking::where('user_id',Auth::id())->where('status','complete')->orderBy('id','desc')->paginate(10,['*'],'complete_pg');
         return view('user.bookings',compact('getAllBooking','getCompleteBooking'));
     }
 }

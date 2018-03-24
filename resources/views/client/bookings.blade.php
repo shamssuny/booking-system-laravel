@@ -23,7 +23,9 @@
             <div class="col-md-12  col-lg-12  col-sm-12 col-xs-12">
           <div class="modal-content" style="margin-top: 3%;margin-bottom: 3%;">
             <div class="modal-header text-center">
-               
+               @if(session('bookSuccess'))
+                    <p class="alert alert-info">{{ session('bookSuccess') }}</p>
+               @endif
                 <h4 class="modal-title" id="myModalLabel" style="display: inline;" >
                     Booking Statistics </h4>
                 <a name="" class="btn btn-light pull-right" data-toggle="modal" data-target="#myModal">Add your Local Booking</a>

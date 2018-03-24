@@ -1,0 +1,66 @@
+.jumbotron {
+background-color: #ee6e73;
+color: #FFF;
+border-radius: 0px;
+margin-bottom: 0;
+
+}
+.jumbotron-sm { 
+padding: 0;
+}
+.jumbotron small {
+color: #FFF;
+}
+.h1 small {
+font-size: 24px;
+}
+.hero-widget { 
+	text-align: center; 
+	padding-top: 20px; 
+	padding-bottom: 20px; 
+}
+.hero-widget .icon {
+	display: block; 
+	font-size: 96px;
+	line-height: 96px; 
+	margin-bottom: 10px; 
+	text-align: center; 
+}
+.hero-widget var { 
+	display: block; 
+	height: 64px; 
+	font-size: 64px; 
+	line-height: 64px; 
+	font-style: normal; 
+}
+.hero-widget label { 
+	font-size: 17px; 
+}
+.hero-widget .options { 
+	margin-top: 10px; 
+}
+.section-head{
+	text-align: center;
+	background-color: #5c5757;
+	color: white;
+}
+.section-head h1{
+	padding: 2% 0;
+}
+a:focus, a:hover {
+    color: #00a79d;
+    text-decoration: none;
+}
+a{
+	color: #00a79d;
+}
+.text-muted{
+	color: #00a79d;
+}
+.padding2{
+	padding: 2% ;
+}
+
+.fa{
+	font-size: 96px;
+}

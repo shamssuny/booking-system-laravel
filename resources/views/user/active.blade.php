@@ -28,6 +28,10 @@
                     @if(session('codeError'))
                         <p class="alert alert-danger">{{ session('codeError') }}</p>
                     @endif
+
+                    @if(session('smsAlert'))
+                        <p class="alert alert-info alert-dismissable">{{ session('smsAlert') }}</p>
+                    @endif
                     <form class="form-group form-inline" action="/user/active" method="POST">
                         {{ csrf_field() }}
                         <input class="form-control" type="text" name="active_code" placeholder="Enter Your Code"><br><br>

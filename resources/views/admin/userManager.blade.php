@@ -1,78 +1,102 @@
 @extends('master.template')
 
+@section('title','Admin | Ayojon')
+
+@push('css')
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-user-manager.css') }}">
+@endpush
+
+
 @section('content')
+<!-- body content  start -->
+<main>
 
-    <div class="main col-md-12 text-center">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12  col-lg-12  col-sm-12 col-xs-12">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+               
+                <h4 class="modal-title" id="myModalLabel" >
+                    User Manager </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12" >
+                        <!-- Nav tabs -->
+                        @if(session('deleteSuccess'))
+                            <p class="alert alert-danger">{{ session('deleteSuccess') }}</p>
+                        @endif
+                        <form class="form-group form-inline text-center" method="GET" action="{{ url('auth/admin/user-manager/search') }}">
 
-        <form method="post" action="{{ URL::current() }}">
-            {{ csrf_field() }}
-            <input type="text" name="search" placeholder="Input User Name">
-            <input type="submit" name="submit" value="Search">
-        </form>
+                            <input class="form-control" type="text" name="search" placeholder="Input User Name">
+                            <input class="btn btn-danger" type="submit" name="submit" value="Search">
+                        </form>
+                        <!-- Tab panes -->
+                        <div class="tab-content" style="padding-right: 30px;">
 
-        @if(session('deleteSuccess'))
-            {{ session('deleteSuccess') }}
-        @endif
+                                <table class="table">
+                                  <thead class="thead-dark">
+                                    <tr>
+                                      
+                                      <th scope="col">User Name</th>
+                                      <th scope="col">Email</th>
+                                      <th scope="col">Phone</th>
+                                      <th scope="col">Action</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
 
-        <div class="main col-md-12">
+                                  @if(isset($getSearchUsers))
+                                      @forelse($getSearchUsers as $client)
+                                    <tr>
+                                      <td>{{ $client->username }}</td>
+                                      <td>{{ $client->email }}</td>
+                                      <td>{{ $client->phone }}</td>
+                                      <td>
+                                          <a href="{{ URL::current() }}/delete/{{ $client->id }}" onclick="return confirm('Delete User ?');">Delete</a>
+                                      </td>
+                                    </tr>
+                                      @empty
+                                          No Clients!
+                                      @endforelse
+                                      <div class="text-center">{{ $getSearchUsers->appends(request()->input())->links() }}</div>
+                                  @else
+                                      @forelse($getUsers as $client)
+
+                                          <tr>
+                                            <td>{{ $client->username }}</td>
+                                            <td>{{ $client->email }}</td>
+                                            <td>{{ $client->phone }}</td>
+                                            <td>
+                                                <a href="{{ URL::current() }}/delete/{{ $client->id }}" onclick="return confirm('Delete User ?');">Delete</a>
+                                            </td>
+                                        </tr>
+
+                                      @empty
+                                          No Users!
+                                      @endforelse
+                                      <div class="text-center">{{ $getUsers->links() }}</div>
+                                  @endif
+                                  </tbody>
+                              </table>
 
 
-            @if(isset($getSearchUsers))
-                @forelse($getSearchUsers as $client)
-                    <div class="col-md-12" style="border-bottom: 2px solid green">
-
-                        <div class="col-md-3">
-                            {{ $client->username }}
                         </div>
-
-                        <div class="col-md-3">
-                            {{ $client->email }}
-                        </div>
-
-                        <div class="col-md-3">
-                            {{ $client->phone }}
-                        </div>
-
-                        <div class="col-md-3">
-                            <a href="{{ URL::current() }}/delete/{{ $client->id }}" onclick="return confirm('Delete User ?');">Delete</a>
-                        </div>
-
+                        
                     </div>
-                @empty
-                    No Clients!
-                @endforelse
-                {{ $getSearchUsers->links() }}
-            @else
-                @forelse($getUsers as $client)
-                    <div class="col-md-12" style="border-bottom: 2px solid green">
-
-                        <div class="col-md-3">
-                            {{ $client->username }}
-                        </div>
-
-                        <div class="col-md-3">
-                            {{ $client->email }}
-                        </div>
-
-                        <div class="col-md-3">
-                            {{ $client->phone }}
-                        </div>
-
-                        <div class="col-md-3">
-                            <a href="{{ URL::current() }}/delete/{{ $client->id }}" onclick="return confirm('Delete User ?');">Delete</a>
-                        </div>
-
-                    </div>
-                @empty
-                    No Users!
-                @endforelse
-                {{ $getUsers->links() }}
-            @endif
-
-
-
+                    
+                </div>
+            </div>
         </div>
+        </div>
+          </div>
+        </div>
+    
 
-    </div>
+<!-- body end -->
 
+</main>
+
+<!-- body end -->
 @endsection

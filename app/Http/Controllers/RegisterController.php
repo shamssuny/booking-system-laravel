@@ -24,9 +24,9 @@ class RegisterController extends Controller
     public function store(){
         $this->validate(request(),[
             'username' => 'required|alpha_dash',
-            'password' => 'required',
-            'email' => 'required',
-            'phone' => 'required',
+            'password' => 'required|min:6',
+            'email' => 'required|email',
+            'phone' => 'required|numeric',
             'u_type' => 'required'
         ]);
 
@@ -58,6 +58,13 @@ class RegisterController extends Controller
                         $id = $getIdOfTheUser->first()->id;
                         $randomCode = rand();
                         //need to add sms gateway here to send the code
+
+
+                        $to = $getIdOfTheUser->first()->phone;
+                        $msg = "Registration Success!\nWelcome To Ayojon\nYour Approve Code is: ".$randomCode;
+                        Approve::sendSms($to,$msg);
+
+
                         $code->user_id = $id;
                         $code->code = $randomCode;
                         $code->save();
@@ -67,7 +74,7 @@ class RegisterController extends Controller
                     }
 
                 }else{
-                    return redirect('register')->with('usererror','Username/Phone Exists');
+                    return redirect('/login')->with('usererror','Username/Phone Exists');
                 }
 
                 return redirect('/login')->with('regsuccess','Register Successfull! Login to Continue.');

@@ -17,7 +17,7 @@
 
 
 @php
-    $city = array('dhaka','chittagong','khulna','barishal','mymensing');
+    //$city = array('dhaka','chittagong','khulna','barishal','mymensing');
 @endphp
 
 
@@ -28,8 +28,8 @@
         <div class="container">
             <div class="col-xs-8 col-md-8 col-md-offset-2 col-lg-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 " style="padding-top: 5%;">
                 <div class="row ">
-                    <form action="{{ URL::current() }}" method="POST">
-                        {{ csrf_field() }}
+                    <form action="{{ url('client/search') }}" method="GET">
+
                         <div class="col-md-4 col-sm-4 col-xs-12 sec" >
                             <select class="form-control" name="city" id="c">
                                 <option value="">City</option>
@@ -92,7 +92,7 @@
 
                     @endforelse
                     <div class="col-md-12 text-center">
-                        {{ $allSearchCenters->links() }}
+                        {{ $allSearchCenters->appends(request()->all())->links() }}
                     </div>
 
 
@@ -144,23 +144,7 @@
 
 
     <script type="text/javascript">
-        //code for make auto generated dropdown
-        var dhaka = ['uttara','mirpur','rampura','banani','mohakhali'];
-        var chittagong = ['halishahar','pahartali','agrabad'];
-        $('#c').change(function () {
-            var getValue = $(this).val();
-            if(getValue == 'dhaka'){
-                $('#sc').html("");
-                for(var i=0;i<dhaka.length;i++){
-                    $('#sc').append("<option value='"+dhaka[i]+"'>"+dhaka[i]+"</option>");
-                }
-            }else if(getValue == 'chittagong'){
-                $('#sc').html("");
-                for(var i=0;i<chittagong.length;i++){
-                    $('#sc').append("<option value='"+chittagong[i]+"'>"+chittagong[i]+"</option>");
-                }
-            }
-        });
+
     </script>
 
 @endsection

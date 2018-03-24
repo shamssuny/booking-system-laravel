@@ -122,7 +122,11 @@
               <label for="City & Subcity" class="col-sm-3 control-label">Select City & Subcity </label>
               <div class="col-sm-9 zero">
                 <div class="col-md-5 col-sm-4 col-xs-12 sec">
+                    @php
+                        //$city = array('dhaka','chittagong','khulna','barishal','mymensing');
+                    @endphp
                   <select class="form-control" name="city" id="c">
+                      <option value="">Select City</option>
                       @forelse($city as $cities)
                           @if($cities == $getCenterDetails->city)
                               <option value="{{ $cities }}" selected>{{ $cities }}</option>
@@ -171,23 +175,7 @@
 
 
 <script type="text/javascript">
-    //code for make auto generated dropdown
-    var dhaka = ['uttara','mirpur','rampura','banani','mohakhali'];
-    var chittagong = ['halishahar','pahartali','agrabad'];
-    $('#c').change(function () {
-        var getValue = $(this).val();
-        if(getValue == 'dhaka'){
-            $('#sc').html("");
-            for(var i=0;i<dhaka.length;i++){
-                $('#sc').append("<option value='"+dhaka[i]+"'>"+dhaka[i]+"</option>");
-            }
-        }else if(getValue == 'chittagong'){
-            $('#sc').html("");
-            for(var i=0;i<chittagong.length;i++){
-                $('#sc').append("<option value='"+chittagong[i]+"'>"+chittagong[i]+"</option>");
-            }
-        }
-    });
+
 </script>
 
 <script>

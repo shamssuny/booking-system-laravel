@@ -49,8 +49,8 @@ class ClientHomeController extends Controller
     public function centerShow(){
         //get center information
         $getCenterDetails = Center::where('client_id',Auth::guard('client')->id())->first();
-        $city = array('dhaka','chittagong','khulna','barishal','mymensing');
-        return view('client.centerShow',compact('getCenterDetails','city'));
+
+        return view('client.centerShow',compact('getCenterDetails'));
     }
 
     //update center information

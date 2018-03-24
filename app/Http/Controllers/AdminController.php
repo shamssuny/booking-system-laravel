@@ -12,6 +12,7 @@ use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -45,7 +46,7 @@ class AdminController extends Controller
 
     //show showClientVerify page
     public function showClientVerify(){
-        $inactive = Client::where('active','no')->paginate(10);
+        $inactive = Client::where('active','no')->paginate(10,['*'],'ac_client');
         $active = Client::where('active','yes')->paginate(10);
         return view('admin.clientverify',compact('inactive','active'));
     }
@@ -90,12 +91,18 @@ class AdminController extends Controller
 
     //show showClientManager page
     public function showClientManager(){
-        $getAllClient = Client::all();
+        $getAllClient = Client::paginate(10);
         return view('admin.showClientManager',compact('getAllClient'));
     }
 
+    //show client's center
+    public function showClientCenter($id){
+        $getTheCenter = Center::where('client_id',$id)->get()->first();
+        return view('admin.showClientCenter',compact('getTheCenter'));
+    }
+
     public function showSearchClients(){
-        $getSearchClient = Client::where('username','like','%'.request('search').'%')->paginate(15);
+        $getSearchClient = Client::where('username','like','%'.request('search').'%')->paginate(10);
         return view('admin.showClientManager',compact('getSearchClient'));
     }
 
@@ -115,19 +122,21 @@ class AdminController extends Controller
 
     //show bookings
     public function showBooking(){
-        $getPendings = Booking::where('status','pending')->orderBy('id','desc')->paginate(10);
-        $getPaymentPendings = Booking::where('status','payment')->orderBy('id','desc')->paginate(10);
-        $getPaidCode = Booking::where('status','payment checking')->orderBy('id','desc')->paginate(10);
-        $getBooked = Booking::where('status','booked')->orderBy('id','desc')->paginate(10);
-        $getComplete = Booking::where('status','complete')->orderBy('id','desc')->paginate(10);
+        $getPendings = Booking::where('status','pending')->orderBy('id','desc')->paginate(10,['*'],'pending_pg');
+        $getPaymentPendings = Booking::where('status','payment')->orderBy('id','desc')->paginate(10,['*'],'payment_pg');
+        $getPaidCode = Booking::where('status','payment checking')->orderBy('id','desc')->paginate(10,['*'],'paidcode_pg');
+        $getBooked = Booking::where('status','booked')->orderBy('id','desc')->paginate(10,['*'],'booked_pg');
+        $getComplete = Booking::where('status','complete')->orderBy('id','desc')->paginate(10,['*'],'complete_pg');
         return view('admin.bookingManager',compact('getPendings','getPaymentPendings','getPaidCode','getBooked','getComplete'));
     }
 
     //change booking status
     public function bookStatus($id){
         //make instance of book model
+
         $bookStat = Booking::find($id);
         if(request('status') == 'pending'){
+            //dd("aisi");
             $bookStat->status = 'pending';
             $bookStat->save();
         }else if(request('status') == 'payment'){
@@ -149,19 +158,19 @@ class AdminController extends Controller
             Booking::find($id)->delete();
         }
 
-        return redirect()->back();
+        return redirect()->back()->with('actionSuccess','Action Successful!');
     }
 
 
     //showUserManager
     public function showUserManager(){
-        $getUsers = User::paginate(20);
+        $getUsers = User::paginate(10);
         return view('admin.userManager',compact('getUsers'));
     }
 
     //search user
     public function showSearchUser(){
-        $getSearchUsers = User::where('username','like','%'.request('search').'%')->paginate(15);
+        $getSearchUsers = User::where('username','like','%'.request('search').'%')->paginate(10);
         return view('admin.userManager',compact('getSearchUsers'));
     }
 
@@ -178,7 +187,7 @@ class AdminController extends Controller
 
     //show support center
     public function showSupport(){
-        $getSupport = Support::paginate(10)->sortByDesc('id');
+        $getSupport = Support::orderBy('id','desc')->paginate(20);
         return view('admin.support',compact('getSupport'));
     }
 
@@ -189,7 +198,7 @@ class AdminController extends Controller
         $support->status = request('status');
         $support->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('updated','Updated Successful!');
     }
 
 

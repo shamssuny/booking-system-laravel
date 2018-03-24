@@ -71,7 +71,15 @@ class UserHomeController extends Controller
     //resend the code to phone
     public function resendCode(){
         //get user code send it via sms gateway
-        return 'resend code procedure goes here';
+        $getCode = Approve::where('user_id',Auth::id())->get()->first()->code;
+        $getUsePhone = User::find(Auth::id())->phone;
+        $msg = "Ayojon\nYour Activation Code: ".$getCode;
+        $response = Approve::sendSms($getUsePhone,$msg);
+        if($response == true){
+            return redirect()->back()->with('smsAlert','Your Code Has Been Sent');
+        }else{
+            return redirect()->back()->with('smsAlert','An error Occur!');
+        }
     }
 
     //show users profile

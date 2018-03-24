@@ -1,75 +1,124 @@
 @extends('master.template')
 
+@section('title','Admin | Ayojon')
+
+@push('css')
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/admin-client-manager.css') }}">
+@endpush
+
+
 @section('content')
+<!-- body content  start -->
+<main>
 
-    <div class="main col-md-12 text-center">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12  col-lg-12  col-sm-12 col-xs-12" style="margin-top: 3%;margin-bottom: 3%;">
+          <div class="modal-content">
+            <div class="modal-header text-center">
+               
+                <h4 class="modal-title" id="myModalLabel" class="" >
+                    Client Manager </h4>
 
-        <form method="post" action="{{ URL::current() }}">
-            {{ csrf_field() }}
-            <input type="text" name="search" placeholder="Input Client Username">
-            <input type="submit" name="submit" value="Search">
-        </form>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12" >
+                        <!-- Nav tabs -->
+                        @if(session('deleteSuccess'))
+                            <p class="alert alert-danger">{{ session('deleteSuccess') }}</p>
+                        @endif
+                        <form class="form-group form-inline text-center" method="GET" action="{{ url('auth/admin/client-manager/search') }}">
 
-        @if(session('deleteSuccess'))
-            {{ session('deleteSuccess') }}
-        @endif
+                            <input class="form-control" type="text" name="search" placeholder="Input Client Username">
+                            <input class="btn btn-danger" type="submit" name="submit" value="Search">
+                        </form>
+                        <!-- Tab panes -->
+                        <div class="tab-content" style="padding-right: 30px;">
 
-        <div class="main col-md-12">
+                                <table class="table">
+                                  <thead class="thead-dark">
 
 
-            @if(isset($getSearchClient))
-                @forelse($getSearchClient as $client)
-                    <div class="col-md-12" style="border-bottom: 2px solid green">
+                                    <tr>
+                                      <th scope="col">Username</th>
+                                      <th scope="col">Email</th>
+                                      <th scope="col">Phone</th>
+                                      <th scope="col">Action</th>
+                                    </tr>
 
-                        <div class="col-md-3">
-                            {{ $client->username }}
+
+                                  </thead>
+                                  <tbody>
+
+
+                                  @if(isset($getSearchClient))
+                                      @forelse($getSearchClient as $client)
+
+                                          <tr>
+
+                                              <td>{{ $client->username }}</td>
+                                              <td>{{ $client->email }}</td>
+                                              <td>{{ $client->phone }}</td>
+                                              <td>
+                                                  <a href="{{ URL::current() }}/delete/{{ $client->id }}" onclick="return confirm('Delete Client ?');">Delete</a>
+                                              </td>
+
+                                          </tr>
+
+                                      @empty
+                                          No Clients!
+                                      @endforelse
+                                      <div class="text-center">
+                                          {{ $getSearchClient->appends(request()->input())->links() }}
+                                      </div>
+                                  @else
+                                      @forelse($getAllClient as $client)
+
+                                          <tr>
+
+                                              <td>{{ $client->username }}</td>
+                                              <td>{{ $client->email }}</td>
+                                              <td>{{ $client->phone }}</td>
+                                              <td>
+                                                  <a href="{{ URL::current() }}/delete/{{ $client->id }}" onclick="return confirm('Delete Client ?');">Delete</a>
+
+                                              </td>
+
+                                          </tr>
+
+                                      @empty
+                                          No Clients!
+                                      @endforelse
+                                      <div class="text-center">
+                                          {{ $getAllClient->links() }}
+                                      </div>
+                                  @endif
+
+
+
+
+                                  </tbody>
+                              </table>
+
+
+
                         </div>
-
-                        <div class="col-md-3">
-                            {{ $client->email }}
-                        </div>
-
-                        <div class="col-md-3">
-                            {{ $client->phone }}
-                        </div>
-
-                        <div class="col-md-3">
-                            <a href="{{ URL::current() }}/delete/{{ $client->id }}" onclick="return confirm('Delete Client ?');">Delete</a>
-                        </div>
-
+                        
                     </div>
-                @empty
-                    No Clients!
-                @endforelse
-            @else
-                @forelse($getAllClient as $client)
-                    <div class="col-md-12" style="border-bottom: 2px solid green">
-
-                        <div class="col-md-3">
-                            {{ $client->username }}
-                        </div>
-
-                        <div class="col-md-3">
-                            {{ $client->email }}
-                        </div>
-
-                        <div class="col-md-3">
-                            {{ $client->phone }}
-                        </div>
-
-                        <div class="col-md-3">
-                            <a href="{{ URL::current() }}/delete/{{ $client->id }}" onclick="return confirm('Delete Client ?');">Delete</a>
-                        </div>
-
-                    </div>
-                @empty
-                    No Clients!
-                @endforelse
-            @endif
-
-
+                    
+                </div>
+            </div>
         </div>
+        </div>
+          </div>
+        </div>
+    
 
-    </div>
+<!-- body end -->
+
+</main>
+
+<!-- body end -->
 
 @endsection
