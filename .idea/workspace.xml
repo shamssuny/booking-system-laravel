@@ -2,30 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47070f52-669d-411b-8ae8-7323de2ba84e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/showClientCenter.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Approve.php" afterPath="$PROJECT_DIR$/app/Approve.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientBookingController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientBookingController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientHomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientHomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UserHomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserHomeController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/bookingManager.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/bookingManager.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/clientverify.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/clientverify.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/showClientManager.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/showClientManager.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/support.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/support.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/userManager.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/userManager.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/client/bookings.blade.php" afterPath="$PROJECT_DIR$/resources/views/client/bookings.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/client/centerShow.blade.php" afterPath="$PROJECT_DIR$/resources/views/client/centerShow.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/client/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/client/home.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/login.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/master/template.blade.php" afterPath="$PROJECT_DIR$/resources/views/master/template.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/active.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/active.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,31 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
+            <state relative-caret-position="532">
               <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="template.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/master/template.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3500">
-              <caret line="259" column="82" lean-forward="false" selection-start-line="259" selection-start-column="82" selection-end-line="259" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RegisterController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -96,7 +56,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2018_02_07_143252_create_bookings_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/ApproveCodeCheck.php" />
         <option value="$PROJECT_DIR$/app/Booking.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_02_15_044800_create_payments_table.php" />
@@ -131,7 +90,6 @@
         <option value="$PROJECT_DIR$/resources/views/admin/showClientManager.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/showClientCenter.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/clientverify.blade.php" />
-        <option value="$PROJECT_DIR$/app/Approve.php" />
         <option value="$PROJECT_DIR$/resources/views/user/active.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserHomeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BookingController.php" />
@@ -144,9 +102,11 @@
         <option value="$PROJECT_DIR$/resources/views/user/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/client/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-        <option value="$PROJECT_DIR$/resources/views/master/template.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/client/centerShow.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RegisterController.php" />
+        <option value="$PROJECT_DIR$/resources/views/master/template.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+        <option value="$PROJECT_DIR$/app/Approve.php" />
       </list>
     </option>
   </component>
@@ -204,6 +164,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -430,9 +391,30 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ayojon0.1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ayojon0.1" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -443,7 +425,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="SearchEverywhereHistoryKey" value="reg&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/RegisterController.php&#10;clie&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/ClientHomeController.php&#10;admi&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/AdminController.php&#10;admin&#9;null&#9;null&#10;booking&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/resources/views/client/bookings.blade.php&#10;clientbo&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/ClientBookingController.php&#10;book&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/BookingController.php&#10;home&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/resources/views/user/home.blade.php&#10;user&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/UserHomeController.php&#10;app&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/config/app.php&#10;dashboar&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/public/css/dashboard.css&#10;ker&#9;null&#9;null&#10;main.c&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/public/css/main.css&#10;Use&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/UserHomeController.php&#10;centerd&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/public/css/centerdetailupdate.css&#10;Post&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/VerifyPostSize.php&#10;UploadFileS&#9;null&#9;null&#10;PostM&#9;null&#9;null&#10;clien&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/ClientHomeController.php&#10;clientboo&#9;null&#9;null&#10;adm&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/AdminController.php&#10;userh&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/UserHomeController.php&#10;supp&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/resources/views/admin/support.blade.php&#10;regis&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/RegisterController.php&#10;use&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/UserHomeController.php&#10;22326480d1789e5a77059269ae7564ecf6d3ab11.php&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/storage/framework/views/22326480d1789e5a77059269ae7564ecf6d3ab11.php&#10;kern&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Kernel.php&#10;b921431fc7b0a2733641a747fc6b223854591666.php&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/storage/framework/views/b921431fc7b0a2733641a747fc6b223854591666.php&#10;clientho&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/ClientHomeController.php&#10;payments&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/database/migrations/2018_02_15_044800_create_payments_table.php&#10;bo&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/BookingController.php&#10;rout&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/routes.php&#10;route&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/routes.php&#10;rou&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/routes.php&#10;3e97990a542e35f9cfb8322e8eefa92ebc9e4d1c.php&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/storage/framework/views/3e97990a542e35f9cfb8322e8eefa92ebc9e4d1c.php&#10;log&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/LoginController.php&#10;lo&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/LoginController.php&#10;re&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Controllers/RegisterController.php&#10;Kerne&#9;FILE&#9;file://E:/Program Files/wamp/www/ayojon/ayojon0.1/app/Http/Kernel.php&#10;Ker&#9;null&#9;null" />
-    <property name="nodejs_interpreter_path" value="$PROJECT_DIR$/../../../../nodejs/node" />
+    <property name="nodejs_interpreter_path" value="E:/nodejs/node" />
     <property name="js-jscs-nodeInterpreter" value="E:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RunManager">
@@ -564,12 +546,14 @@
       <workItem from="1521251944575" duration="8433000" />
       <workItem from="1521692474637" duration="3145000" />
       <workItem from="1521865650396" duration="15287000" />
-      <workItem from="1521900485893" duration="1511000" />
+      <workItem from="1521900485893" duration="2114000" />
+      <workItem from="1522691248838" duration="1348000" />
+      <workItem from="1522732677014" duration="937000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="465557000" />
+    <option name="totallyTimeSpent" value="468445000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -582,7 +566,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19765739" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -617,7 +601,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/user/bookingsOld.blade.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/user/profileOld.blade.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/user/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -762,13 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Approve.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/showClientManager.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2268">
@@ -832,13 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-518">
-          <caret line="172" column="94" lean-forward="false" selection-start-line="172" selection-start-column="94" selection-end-line="172" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1700">
@@ -853,19 +822,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/client/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,7 +833,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="14" column="6" lean-forward="false" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -881,9 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="550">
           <caret line="23" column="748" lean-forward="false" selection-start-line="23" selection-start-column="741" selection-end-line="23" selection-end-column="748" />
-          <folding>
-            <element signature="e#71#110#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -891,22 +847,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="142" column="71" lean-forward="false" selection-start-line="142" selection-start-column="71" selection-end-line="142" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/master/template.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3500">
-          <caret line="259" column="82" lean-forward="false" selection-start-line="259" selection-start-column="82" selection-end-line="259" selection-end-column="82" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RegisterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="28" column="40" lean-forward="false" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+        <state relative-caret-position="325">
+          <caret line="29" column="34" lean-forward="true" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/master/template.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="54" column="22" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="697" column="54" lean-forward="false" selection-start-line="697" selection-start-column="54" selection-end-line="697" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1250">
+          <caret line="172" column="94" lean-forward="false" selection-start-line="172" selection-start-column="94" selection-end-line="172" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Approve.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>

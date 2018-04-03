@@ -36,11 +36,7 @@
 
             <ul class="nav navbar-nav navbar-left uppercase bold">
                 @yield('leftNavContent')
-                @if(Auth::check())
-                    <li><a href="{{ url('/user') }}">Home</a></li>
-                @elseif(Auth::guard('client')->check())
-                    <li><a href="{{ url('/client') }}">Home</a></li>
-                @endif
+
             </ul>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -52,6 +48,11 @@
                 {{--<li><a href="#"> Demo</a></li>--}}
                 {{--<li><a href="#"> About</a></li>--}}
                 {{--<li><a href="#"> Sign-in</a></li>--}}
+                @if(Auth::check())
+                    <li><a href="{{ url('/user') }}">Home</a></li>
+                @elseif(Auth::guard('client')->check())
+                    <li><a href="{{ url('/client') }}">Home</a></li>
+                @endif
                 @yield('rightNavContent')
                 @if(Auth::check())
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, {{ App\User::find(Auth::id())->username }}<b class="caret"></b></a>

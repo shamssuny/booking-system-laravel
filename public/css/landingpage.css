@@ -1,0 +1,21 @@
+body{
+
+}
+.btn-cu-red{
+	background-color: #ee6e73;
+	border-color: #ee6e73;
+	transition: .3s ease-out;
+}
+.btn-cu-red:hover{
+	background-color: #f5a5a8;
+	border-color: #f5a5a8;
+}
+#mainNav .navbar-nav .nav-item .nav-link:hover{
+	color: #ee6e73;
+	transition: 1s ease-out;
+}
+#mainNav .navbar-nav .nav-item .nav-link.active{
+	font-weight: bold;
+	color: #ee6e73;
+	transition: all 1s;
+}

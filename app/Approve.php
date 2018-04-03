@@ -10,7 +10,7 @@ class Approve extends Model
     public static function sendSms($to , $msg)
     {
         //sms gateway
-        $token = "761f1237637c22771120387d084a9de1";
+        $token = "1336573d39c09532a91bd5b6407de43e";
         $url = "http://sms.greenweb.com.bd/api.php";
 
 
